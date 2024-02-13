@@ -15,26 +15,26 @@ public class BlogController {
     @Autowired
     private BlogService blogService;
 
-    @GetMapping("/autori")
+    @GetMapping("/blogs")
     public List<Blog> getALL(){
         return blogService.cercaTuttiIBlog();
     }
 
-    @GetMapping("/autori/id")
+    @GetMapping("/blogs/id")
     public Blog getBlogById(@RequestParam int id){
         return blogService.cercaBlogPerId(id);
     }
 
-    @PostMapping("/autori")
+    @PostMapping("/blogs")
     public void SaveBlog(@RequestBody Blog blog){
         blogService.salvaBlog(blog);
     }
-    @PutMapping("/autori/{id}")
+    @PutMapping("/blogs/{id}")
     public Blog updateBlog(@PathVariable int id,@RequestBody Blog blog){
         return blogService.aggiornaBlog(id, blog);
     }
 
-    @DeleteMapping("/autori/{id}")
+    @DeleteMapping("/blogs/{id}")
     public void deleteBlog(@PathVariable int id){
         blogService.cancellaBlog(id);
     }
