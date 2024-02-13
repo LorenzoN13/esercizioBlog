@@ -20,8 +20,8 @@ public class BlogController {
         return blogService.cercaTuttiIBlog();
     }
 
-    @GetMapping("/blogs/id")
-    public Blog getBlogById(@RequestParam int id){
+    @GetMapping("/blogs/{id}")
+    public Blog getBlogById(@PathVariable int id){
         return blogService.cercaBlogPerId(id);
     }
 
