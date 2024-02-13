@@ -18,8 +18,8 @@ public class AutoreController {
         return autoreService.cercaTuttiGliAutori();
     }
 
-    @GetMapping("/autori/id")
-    public Autore getAutoreById(@RequestParam int id){
+    @GetMapping("/autori/{id}")
+    public Autore getAutoreById(@PathVariable int id){
         return autoreService.cercaAutorePerId(id);
     }
 
