@@ -51,6 +51,7 @@ public class BlogService {
         return b;
     }
 
+
     public void cancellaBlog(int id)  throws NoSuchElementException{
         Blog b = cercaBlogPerId(id);
         blogs.remove(b);
